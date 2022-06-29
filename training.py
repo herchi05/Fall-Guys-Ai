@@ -12,7 +12,7 @@ def run():
 
 
     dls = ImageDataLoaders.from_path_func(path, fnames, label_func,bs=40, num_workers=0)
-    learn = cnn_learner(dls, resnet18, metrics=error_rate)
+    learn = vision_learner(dls, resnet18, metrics=error_rate)
     print("Loaded")
     learn.fine_tune(4, base_lr=1.0e-02)
 
